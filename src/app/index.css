@@ -17,11 +17,10 @@
 }
 
 @theme {
-  --color-*: initial; 
-  --color-caribbean-current: #006d77ff;
-  --color-tiffany-blue: #83c5beff;
-  --color-alice-blue: #edf6f9ff;
-  --color-pale-dogwood: #ffddd2ff;
-  --color-atomic-tangerine: #e29578ff;
-  --color-isabelline: #e0e1dd;
+  --color-*: initial;
+  --color-jet: #353535ff;
+  --color-caribbean-current: #3c6e71ff;
+  --color-white: #ffffffff;
+  --color-platinum: #d9d9d9ff;
+  --color-indigo-dye: #284b63ff;
 }
