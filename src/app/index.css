@@ -5,10 +5,9 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: var(--color-jet);
 
-  background: var(--color-isabelline);
+  background: var(--color-white);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -21,6 +20,13 @@
   --color-jet: #353535ff;
   --color-caribbean-current: #3c6e71ff;
   --color-white: #ffffffff;
-  --color-platinum: #d9d9d9ff;
   --color-indigo-dye: #284b63ff;
+  --color-platinum: #d9d9d9ff;
+  --color-platinum-100: #e9e9e9;
+  --color-platinum-200: #c9c9c9;
+  --color-platinum-300: #a9a9a9;
+  --color-platinum-400: #999999;
+  --color-platinum-500: #797979;
+  --color-platinum-600: #595959;
+  --color-platinum-700: #393939;
 }
