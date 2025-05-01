@@ -6,9 +6,9 @@ interface SubmitButtonProps {
   isSubmitting: boolean
 }
 
-export const SubmitButton: React.FC<SubmitButtonProps> = ({ label, isSubmitting }) => {
+export const SubmitButton: React.FC<SubmitButtonProps> = ({ label, isSubmitting = false }) => {
   return (
-    <Button>
+    <Button className='w-full bg-caribbean-current text-white' >
       { isSubmitting ? <SmallSimpleLoader /> : label }
     </Button>
   )

@@ -2,13 +2,13 @@ import {PayloadAction, createSlice} from '@reduxjs/toolkit'
 
 export interface AuthState {
   status?: 'Authenticated' | 'Pending' | 'Unauthenticated'
-  username: string
+  name: string
   role: string
 }
 
 const initialState: AuthState = {
   status: 'Pending',
-  username: '',
+  name: '',
   role: '',
 }
 
@@ -18,12 +18,12 @@ const authSlice = createSlice({
   reducers: {
     login: (state, action: PayloadAction<AuthState>) => {
       state.status = 'Authenticated'
-      state.username = action.payload.username
+      state.name = action.payload.name
       state.role = action.payload.role
     },
     logout: (state) => {
       state.status = 'Unauthenticated'
-      state.username = ''
+      state.name = ''
       state.role = ''
     },
   },
