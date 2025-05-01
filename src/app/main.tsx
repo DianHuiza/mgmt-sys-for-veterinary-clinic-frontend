@@ -6,6 +6,10 @@ import { routes } from "./routes.tsx";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { store } from "../store/index.ts";
 import { Provider } from "react-redux";
+import { SessionVerificator } from '../features/auth/components/SessionVerificator.tsx';
+import { eventBus } from '../core/events/EventBus.ts';
+import { logout } from '../store/slices/auth.slice.ts';
+import { events } from '../core/events/constants.ts';
 
 const router = createBrowserRouter(routes);
 
@@ -17,9 +21,14 @@ const queryClient = new QueryClient({
   },
 });
 
+eventBus.on(events.REFRESH_TOKEN_ERROR, () => {
+  store.dispatch(logout())
+});
+
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Provider store={store}>
+      <SessionVerificator />
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={router} />
       </QueryClientProvider>
