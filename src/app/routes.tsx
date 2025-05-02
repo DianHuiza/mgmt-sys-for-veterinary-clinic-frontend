@@ -3,6 +3,7 @@ import { LoginPage } from '../features/auth/pages/LoginPage';
 import { ProtectedRoute } from '../features/auth/components/ProtectedRoute';
 import { BaseLayout } from '../shared/layouts/BaseLayout';
 import { AppointmentsPage } from '../features/appointment/pages/AppointmentsPage';
+import { InfoPage } from '../features/client/pages/InfoPage';
 
 export const routes: RouteObject[] = [
   {
@@ -31,10 +32,20 @@ export const routes: RouteObject[] = [
         ]
       },
       {
-        path: '/contact',
-        element: <h1>Contact</h1>,
+        path: '/info',
+        element: <InfoPage />,
+        children: [
+          {
+            path: 'client/:id',
+            element: <h1>Client</h1>,
+          }
+        ]
       },
     ]
+  },
+  {
+    path: '/admin',
+    element: <h1>Admin</h1>,
   },
   {
     path: '/login',
