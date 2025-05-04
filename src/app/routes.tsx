@@ -4,6 +4,9 @@ import { ProtectedRoute } from '../features/auth/components/ProtectedRoute';
 import { BaseLayout } from '../shared/layouts/BaseLayout';
 import { AppointmentsPage } from '../features/appointment/pages/AppointmentsPage';
 import { InfoPage } from '../features/client/pages/InfoPage';
+import { AdminPage } from '../features/admin/pages/AdminPage';
+import { RoomPanelPage } from '../features/admin/pages/RoomPanelPage';
+import { ClientPanelPage } from '../features/admin/pages/ClientPanelPage';
 
 export const routes: RouteObject[] = [
   {
@@ -45,7 +48,29 @@ export const routes: RouteObject[] = [
   },
   {
     path: '/admin',
-    element: <h1>Admin</h1>,
+    element: <AdminPage />,
+    children: [
+      {
+        path: 'appointments',
+        element: <div>turnos</div>
+      },
+      {
+        path: 'clients',
+        element: <ClientPanelPage />
+      },
+      {
+        path: 'users',
+        element: <div>Usuarios</div>
+      },
+      {
+        path: 'rooms',
+        element: <RoomPanelPage/>
+      },
+      {
+        path: 'records',
+        element: <div>Historail Clinico</div>
+      }
+    ]
   },
   {
     path: '/login',

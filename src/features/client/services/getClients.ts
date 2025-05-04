@@ -1,6 +1,14 @@
 import apiClient from '../../../core/api/apiClient'
 
-export const getClients = async (q: string, page: number = 1) => {
-  const response = await apiClient.get(`/clients`, {params: {q, page}})
+interface GetClientsParams {
+  search: string;
+  page: number;
+  sortBy: string;
+  sortDirection: "asc" | "desc";
+  showDeleted: boolean;
+}
+
+export const getClients = async (params: GetClientsParams) => {
+  const response = await apiClient.get(`/clients`, {params})
   return response.data
 }
